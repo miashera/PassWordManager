@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block navbar %}
+<div class="header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <strong>Dashboard</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h4 style="text-align: center;">Welcome</h4> <br>
+    <h2>Student Dashboard</h2>
+    <p>Welcome to the Password Manager Application Student Dashboard. This application is designed to help you securely manage your university account passwords. Here's what you can do with this password manager:</p>
+    
+    <h4>Features:</h4>
+    <ul>
+        <li>Generate Strong Passwords: Use the robust password generator to create complex and unique passwords for your university accounts.</li>
+        <li>Password Strength Monitoring: Check the strength of the passwords you enter to ensure they meet security standards.</li>
+        <li>Maximum Password Attempts: Set the maximum number of password attempts to enhance security.</li>
+        <li>Encryption and Decryption: Your passwords are encrypted to ensure they remain secure, even if the system is compromised.</li>
+        <li>Password Change Reminders: Receive timely reminders when it's time to change your university account passwords.</li>
+    </ul>
+
+    <h4>Getting Started:</h4>
+    <p>To get started, use the navigation menu above to access the different features and functionalities of the Password Manager Application. Remember to create strong and unique passwords to protect your university accounts.</p>
+</div>
+{% endblock %}
+
+
+{% block script %}
+{% endblock %}
+

@@ -1,0 +1,45 @@
+
+{% extends "base.html" %}
+
+
+{% block navbar %}
+<div class="header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <strong>Password Manager Application</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+</div>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="container">
+    <p>Are you tired of struggling to remember countless passwords for your university accounts? Look no further! Our team has developed a cutting-edge Password Manager Application that will revolutionize the way you manage and secure your passwords. With a focus on user-friendly features, top-notch security, and state-of-the-art encryption, our system is designed to make your digital life more convenient and secure than ever.</p>
+    <h2>Key Features:</h2>
+    <ol>
+        <li><strong>Password Generation:</strong> Our application includes a robust password generator that creates complex, unique passwords for your university accounts. No more using "123456" as your password – we've got you covered with strong and secure passwords.</li>
+        <li><strong>Password Strength Monitoring:</strong> Worried about the strength of your password? Our system will provide real-time feedback on the strength of the password you enter. You'll receive tips and recommendations to help you create stronger, more secure passwords.</li>
+        <li><strong>Maximum Password Attempts:</strong> Security is our priority. You can set the maximum number of password attempts to protect your accounts from unauthorized access. After a certain number of failed attempts, the system will lock down, ensuring your information remains secure.</li>
+        <li><strong>Advanced Encryption:</strong> We implement state-of-the-art encryption techniques to safeguard your stored passwords. Even in the unlikely event of a system breach, your passwords will remain safe and protected.</li>
+        <li><strong>Password Change Reminders:</strong> Forgetting to change your passwords regularly? Our system will send you timely reminders when it's time to update your university account passwords. This extra layer of security helps you stay one step ahead of potential threats.</li>
+    </ol>
+
+    <p>With our Password Manager Application, you can finally have peace of mind, knowing that your passwords are strong, secure, and easy to manage. No more sticky notes or spreadsheets full of login details. Our system provides a comprehensive understanding of the importance of password security.</p>
+
+    <p>Say goodbye to the hassle of managing your passwords and hello to a more secure and convenient digital experience. Try our Password Manager Application today and take control of your online security. Your university accounts will thank you!</p>
+</div>
+{% endblock %}

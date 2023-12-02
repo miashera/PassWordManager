@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+
+{% block navbar %}
+<div class="header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <strong>Password Manager Application</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/register">Signup</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="container">
+        <div class="container">
+            <div class="container">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2>Login</h2>
+
+                <form method="POST" class="mt-4">
+                    <div class="form-group">
+                        <label for="regno">Reg no/ ID number:</label>
+                        <input type="text" name="regno" class="form-control" placeholder="CT111/111111/11" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" class="form-control" placeholder="Must@2002." required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button><br>
+                    <!-- Help Modal Button -->
+                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#helpModal">
+                    Need Help?
+                    </button>
+                    <!-- FAQ Modal Button -->
+                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#faqModal">
+                    FAQ
+                    </button>
+                </form> 
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Help Modal -->
+        <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="helpModalLabel">Help</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Add your help content here -->
+                    <p><br>
+
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- FAQ Modal -->
+        <div class="modal fade" id="faqModal" tabindex="-1" role="dialog" aria-labelledby="faqModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="faqModalLabel">FAQ</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Add your FAQ content here -->
+                    <p>Commonly asked questions and answers go here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        
+   {% endblock %}
+
+ {% block script %}
+  //<script>
+ {% endblock %}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        label {
+            font-size: 1.5em;
+        }
+
+        input {
+            font-size: 1.2em;
+            width: 400px; /* Adjust the width as needed */
+            height: 50px; /* Adjust the height as needed */
+            margin-bottom: 10px; /* Add some spacing between input and button */
+        }
+
+        button {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="/two_fa">
+        <label for="two-fa">2FA Code:</label>
+        <br>
+        <input type="text" name="two-fa">
+        <br>
+        <button type="submit">Submit</button>
+    </form>    
+
+    <!-- {% if error %}
+        <p>{{ error }}</p>
+    {% endif %} -->
+
+</body>
+</html>
