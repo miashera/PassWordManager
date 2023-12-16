@@ -4,7 +4,7 @@
 <div class="header">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
-            <strong>Dashboard</strong>
+            <strong style="color: #3498db;">Dashboard</strong>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,10 +13,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="#" style="color: #ffffff;">Home</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/logout">Logout</a>
+                    <a class="nav-link" href="/logout" style="color: #ffffff;">Logout</a>
                 </li>
             </ul>
         </div>
@@ -41,26 +41,49 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <h4 style="text-align: center;">Welcome</h4> <br>
-    <h2>Student Dashboard</h2>
-    <p>Welcome to the Password Manager Application Student Dashboard. This application is designed to help you securely manage your university account passwords. Here's what you can do with this password manager:</p>
-    
-    <h4>Features:</h4>
-    <ul>
-        <li>Generate Strong Passwords: Use the robust password generator to create complex and unique passwords for your university accounts.</li>
-        <li>Password Strength Monitoring: Check the strength of the passwords you enter to ensure they meet security standards.</li>
-        <li>Maximum Password Attempts: Set the maximum number of password attempts to enhance security.</li>
-        <li>Encryption and Decryption: Your passwords are encrypted to ensure they remain secure, even if the system is compromised.</li>
-        <li>Password Change Reminders: Receive timely reminders when it's time to change your university account passwords.</li>
-    </ul>
+<div class="container" style="background-color: #ffffff; padding: 20px; border-radius: 10px; margin-top: 20px;">
 
-    <h4>Getting Started:</h4>
-    <p>To get started, use the navigation menu above to access the different features and functionalities of the Password Manager Application. Remember to create strong and unique passwords to protect your university accounts.</p>
+    <h2 style="color: #3498db;">Student Dashboard</h2>
+    <p>Welcome to the Student Dashboard. This platform is your secure hub for efficient password management and enhancing your online security. Explore the following features:</p>
+
+    <div class="feature" style="background-color: #e74c3c; color: #ffffff; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+        <h5>Password Vault</h5>
+        <p>Safely store and manage all your passwords in one secure location. Access your accounts with ease and confidence.</p>
+    </div>
+
+    <div class="feature" style="background-color: #2ecc71; color: #ffffff; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+        <h5>Password Generator</h5>
+        <p>Create strong, unique passwords for your accounts with just a click. Enhance the security of your online presence effortlessly.</p>
+    </div>
+
+    <div class="feature" style="background-color: #3498db; color: #ffffff; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+        <h5>Password Health Check</h5>
+        <p>Evaluate the strength of your existing passwords and receive recommendations for improvement. Keep your accounts secure with robust password practices.</p>
+    </div>
+
+    <div class="feature" style="background-color: #f39c12; color: #ffffff; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+        <h5>Two-Factor Authentication (2FA)</h5>
+        <p>Enhance your account security by enabling 2FA where supported. Add an extra layer of protection to keep your information safe.</p>
+    </div>
+
+    <div class="feature" style="background-color: #9b59b6; color: #ffffff; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+        <h5>Secure Notes</h5>
+        <p>Keep confidential information and notes securely within the platform. A safe space for your important details beyond just passwords.</p>
+    </div>
+
+    <div class="feature" style="background-color: #34495e; color: #ffffff; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+        <h5>Account Breach Alerts</h5>
+        <p>Receive notifications if any of your accounts are compromised. Stay informed and take action promptly to secure your accounts.</p>
+    </div>
+
+    <div class="feature" style="background-color: #e67e22; color: #ffffff; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+        <h5>Settings</h5>
+        <p>Customize your SecurePass Manager preferences for a personalized experience. Tailor the platform to suit your needs and preferences.</p>
+    </div>
+
+    <p>Explore these features to fortify your online presence and enjoy a safer digital experience. Your online safety is our top priority!</p>
 </div>
 {% endblock %}
 
-
 {% block script %}
 {% endblock %}
-

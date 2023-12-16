@@ -4,7 +4,7 @@
 <div class="header">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
-            <h3>Admin Dashboard</h3>
+            <h3 style="color: #ffffff;">Admin Dashboard</h3>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,7 +13,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/logout">Logout</a>
+                    <a class="nav-link" href="/logout" style="color: #ffffff;">Logout</a>
                 </li>
             </ul>
         </div>
@@ -28,6 +28,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/main.css">
     <title>report</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: 'Arial', sans-serif;
+            color: #333333;
+        }
+
+        .body {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        .top_bar {
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .mini-table {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .mini-table form {
+            margin-top: 10px;
+        }
+
+        .mini-table label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333333;
+        }
+
+        .mini-table select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .mini-table button {
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .mini-table button:hover {
+            background-color: #2980b9;
+        }
+
+        .table {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .mini_table h3 {
+            color: #3498db;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #bdc3c7;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            color: #ffffff;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #ecf0f1;
+        }
+
+        tbody tr:hover {
+            background-color: #d0d3d4;
+        }
+    </style>
 </head>
 <body>
 

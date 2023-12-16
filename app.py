@@ -56,6 +56,7 @@ def register():
 
         # Create a new user and add to the database
         new_user = User(username=username, password=hashed_password, role=role, REGNO=regno, created_at=datetime.today(),is_approved="False")
+        print("Fucking shit: ", {new_user})
 
         try:
             db.session.add(new_user)
@@ -70,14 +71,16 @@ def register():
     return render_template('register.html')
 
 
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         regno = request.form.get('regno')
         password = request.form.get('password')
         user = User.query.filter(User.REGNO == regno).first()
-    
-        if user and check_password_hash(user.password, password):
+        
+        if user and user.is_approved == "True" and check_password_hash(user.password, password):
             session['user_id'] = user.id  # <SecureCookieSession {'user_id': 20}>
             if user.role == 'faculty':
                 #print(f'Fucking Shit: {user.role}')
@@ -88,9 +91,10 @@ def login():
             else:
                 return redirect(url_for('admin_dashboard'))
                 print(f'Fucking Shit: {user.role}')
-                session.pop('_flashes', None)
-        else:
-            flash(f'Login failed.', 'danger')
+                session.pop('_flashes', None)        
+
+        if user and user.is_approved != "True":
+            flash('Await admin approval', 'danger')
 
     return render_template('login.html')
 
@@ -137,7 +141,7 @@ def logout():
 
 @app.route('/')
 def index():
-    return redirect(url_for("login"))
+    return render_template('index.html')
 
 @app.route('/about')
 def about():

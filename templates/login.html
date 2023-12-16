@@ -1,10 +1,9 @@
 {% extends "base.html" %}
 
-
 {% block navbar %}
 <div class="header">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3498db;">
+        <a class="navbar-brand" href="#" style="color: #ffffff; font-family: 'Arial', sans-serif;">
             <strong>Password Manager Application</strong>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -14,10 +13,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="/" style="color: #ffffff;">Home</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/register">Signup</a>
+                    <a class="nav-link" href="/register" style="color: #ffffff;">Signup</a>
                 </li>
             </ul>
         </div>
@@ -26,100 +25,160 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="container">
-        <div class="container">
-            <div class="container">
-                {% with messages = get_flashed_messages(with_categories=true) %}
-                    {% if messages %}
-                        {% for category, message in messages %}
-                            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
-                                {{ message }}
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <h2>Login</h2>
+<div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert" style="background-color: #ecf0f1; /* Choose your desired alert background color */">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+</div>
+<div class="container-fluid" style="background-color:  hwb(198 55% 29%); padding: 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 style="color: #3498db;">Login</h2>
 
-                <form method="POST" class="mt-4">
-                    <div class="form-group">
-                        <label for="regno">Reg no/ ID number:</label>
-                        <input type="text" name="regno" class="form-control" placeholder="CT111/111111/11" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password:</label>
-                        <input type="password" name="password" class="form-control" placeholder="Must@2002." required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Login</button><br>
-                    <!-- Help Modal Button -->
-                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#helpModal">
-                    Need Help?
-                    </button>
-                    <!-- FAQ Modal Button -->
-                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#faqModal">
-                    FAQ
-                    </button>
-                </form> 
+            <form method="POST" class="mt-4">
+                <div class="form-group">
+                    <label for="regno">Reg no/ ID number:</label>
+                    <input type="text" name="regno" class="form-control" placeholder="CT111/111111/11" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Must@2002." required>
+                    <button id="showPasswordBtn" type="button" onclick="togglePassword()" style="color: #3498db; background-color: #ffffff; border: 1px solid #3498db; padding: 5px; margin-top: 5px;">Show Password</button>
+                    <script>
+                        function togglePassword() {
+                            var passwordField = document.getElementById("password");
+                            var showPasswordBtn = document.getElementById("showPasswordBtn");
+
+                            if (passwordField.type === "password") {
+                                passwordField.type = "text";
+                                showPasswordBtn.textContent = "Hide Password";
+                            } else {
+                                passwordField.type = "password";
+                                showPasswordBtn.textContent = "Show Password";
+                            }
+                        }
+                    </script>
+                </div>                    
+                <button type="submit" class="btn btn-primary" style="background-color: #3498db;">Login</button><br>
+                <!-- Help Modal Button -->
+                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#helpModal" style="color: #3498db;">Need Help?</button>
+                <!-- FAQ Modal Button -->
+                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#faqModal" style="color: #3498db;">FAQ</button>
+            </form>
+        </div>
+    </div>
+</div>
+    
+<!-- Help Modal -->
+<div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="helpModalLabel">Help</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Add your help content here -->
+                <p>
+                    If you are experiencing issues while logging in, here are some common solutions that might help:
+
+                    <br><br>
+
+                    <strong>1. Forgot Password:</strong> If you've forgotten your password, click on the "Forgot
+                    Password" link on the login page. Follow the instructions to reset your password securely.
+
+                    <br><br>
+
+                    <strong>2. Account Lockout:</strong> After a certain number of unsuccessful login attempts, your
+                    account may be temporarily locked for security reasons. Wait for a few minutes and try again, or use
+                    the "Forgot Password" option.
+
+                    <br><br>
+
+                    <strong>3. Browser Compatibility:</strong> Ensure that you are using a supported browser and that it
+                    is up to date. Clear your browser cache and cookies if needed.
+
+                    <br><br>
+
+                    <strong>4. Account Activation:</strong> If you are a new user, make sure you have been activated by
+                    the admin.
+
+                    <br><br>
+
+                </p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
-<!-- Help Modal -->
-        <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="helpModalLabel">Help</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!-- Add your help content here -->
-                    <p><br>
 
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
+<!-- FAQ Modal -->
+<div class="modal fade" id="faqModal" tabindex="-1" role="dialog" aria-labelledby="faqModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="faqModalLabel">FAQ</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Add your FAQ content here -->
+                <h3>Frequently Asked Questions</h3>
+
+                <p><strong>Q: Why should I use a password management system?</strong></p>
+                <p><strong>A:</strong> Password management systems provide a secure and convenient way to store,
+                    generate, and manage complex passwords for your online accounts.
+                    They enhance your overall online security by reducing the risk of weak or reused passwords.</p>
+
+                <p><strong>Q: How secure is the password vault?</strong></p>
+                <p><strong>A:</strong> Our password vault employs advanced hashed techniques to safeguard your
+                    stored passwords.
+                    The data is encrypted both during
+                    transit and while at rest, ensuring that your sensitive information remains secure.</p>
+
+                <p><strong>Q: What makes a strong password?</strong></p>
+                <p><strong>A:</strong> A strong password typically includes a combination of uppercase and lowercase
+                    letters, numbers, and
+                    special characters. It should be unique and avoid easily guessable information such as names or
+                    birthdays. Our system can also generate strong passwords for you.</p>
+
+                <p><strong>Q: How does the password generator work?</strong></p>
+                <p><strong>A:</strong> The password generator creates random, complex passwords based on your specified
+                    criteria, such
+                    as length and character types. It ensures that the generated passwords are strong and secure for use
+                    across various accounts.</p>
+            
+                <p><strong>Q: How often should I change my password?</strong></p>
+                <p><strong>A:</strong> It's a good practice to change your passwords periodically. We recommend updating
+                    them at least every three to six months to enhance your account security.</p>            
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
-        </div>
+    </div>
+</div>
 
-        <!-- FAQ Modal -->
-        <div class="modal fade" id="faqModal" tabindex="-1" role="dialog" aria-labelledby="faqModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="faqModalLabel">FAQ</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!-- Add your FAQ content here -->
-                    <p>Commonly asked questions and answers go here.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-        </div>
 
-        
-   {% endblock %}
+{% endblock %}
 
- {% block script %}
-  //<script>
- {% endblock %}
+{% block script %}
+//
+<script>
+    {% endblock %}

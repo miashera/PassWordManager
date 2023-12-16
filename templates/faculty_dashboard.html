@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 
-
 {% block navbar %}
 <div class="header">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
-            <strong>Password Manager Application</strong>
+            <strong style="color: #3498db;">Password Manager Application</strong>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,7 +13,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/logout">Logout</a>
+                    <a class="nav-link" href="/logout" style="color: #ffffff;">Logout</a>
                 </li>
             </ul>
         </div>
@@ -23,12 +22,21 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <h2>Faculty Dashboard</h2>
-    <p>This is the faculty's dashboard</p>  
- </div>
-{% endblock %}
+<div class="container" style="background-color: #ecf0f1; padding: 20px; border-radius: 10px; margin-top: 20px;">
 
+    <h2 style="color: #3498db;">Faculty Dashboard</h2>
+    <p>Welcome to the Faculty Dashboard. This centralized platform is designed to enhance your experience and streamline your tasks as a faculty member. Below are some features related to password management:</p>
+
+    <h3 style="color: #3498db;">Password Management</h3>
+    <p>Manage and secure your account with our robust password management system. Follow these guidelines for a strong and secure password:</p>
+    <ul>
+        <li style="color: #27ae60;">Use a combination of uppercase and lowercase letters</li>
+        <li style="color: #27ae60;">Include numbers and special characters</li>
+        <li style="color: #27ae60;">Avoid using easily guessable information, such as your name or birthdate</li>
+    </ul>
+
+</div>
+{% endblock %}
 
 {% block script %}
 {% endblock %}
